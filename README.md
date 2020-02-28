@@ -1,2 +1,29 @@
-# lab_temp
-实验室网站模版
+# coupon
+
+## 第三方库
+```
+lodash
+axios
+vant
+vuex
+```
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
