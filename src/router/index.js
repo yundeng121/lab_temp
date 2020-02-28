@@ -1,17 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Tabbar from "../components/tabbar/Tabbar";
-import User from "../views/user";
-import home from "../views/home";
-import goods_detail from "../views/goods_detail";
-import search from "../views/search";
-import order_list from "../views/order_lists";
-import login from "../views/login"
-import WechatLogin from "../components/user/WechatLogin";
-import WechatConfirm from "../views/wechat_confirm";
-import bill from "../views/bill_lists" 
-import store from '@/store'
-
+import Menu from "../components/Menu"
+import home from "../views/home"
+import news from "../views/news"
+import research from "../views/research"
+import team from "../views/team"
+import results from "../views/results"
+import recruit from "../views/recruit"
+import contact from "../views/contact"
 Vue.use(VueRouter);
 
 const router = new VueRouter({
@@ -19,93 +15,60 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'index',
       components: {
         default: home,
-        tabbar: Tabbar
-      },
-      meta: {
-        keepAlive: true
+        menu:Menu
       }
     },
     {
-      path: '/user',
-      name: 'user',
+      path:'/news',
+      name: 'news',
       components: {
-        default: User,
-        tabbar: Tabbar
-      },
-      meta: {
-        keepAlive: true,
-        requireLogin:true,
+        default: news,
+        menu:Menu
       }
-    },
-    {
-      path: '/goods/:platform/:id',
-      name: 'goods_detail',
-      component: goods_detail,
-      meta: {
-        keepAlive: false
+    },{
+      path:'/research',
+      name: 'research',
+      components: {
+        default: research,
+        menu:Menu
       }
-    },
-    {
-      path: '/search',
-      name: 'search',
-      component: search,
-      meta: {
-        keepAlive: true
+    },{
+      path:'/team',
+      name: 'team',
+      components: {
+        default: team,
+        menu:Menu
       }
-    },
-    {
-      path: '/order',
-      name: 'order',
-      component: order_list,
-      meta: {
-        requireLogin:true,
+    },{
+      path:'/results',
+      name: 'results',
+      components: {
+        default: results,
+        menu:Menu
       }
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: login
-    },
-    {
-      path: '/wechat_login',
-      name: 'wechat_login',
-      component: WechatLogin
-    },
-    {
-      path: '/wechat_confirm',
-      name: 'wechat_confirm',
-      component: WechatConfirm
-    },
-    {
-      path: '/bill',
-      name: 'bill',
-      component: bill
-    }]
+    },{
+      path:'/recruit',
+      name: 'recruit',
+      components: {
+        default: recruit,
+        menu:Menu
+      }
+    },{
+      path:'/contact',
+      name: 'contact',
+      components: {
+        default: contact,
+        menu:Menu
+      }
+    }
+  ] 
 });
 
-router.beforeEach((to, from, next) => {
-  let ua = navigator.userAgent.toLowerCase();
-  if (to.meta.requireLogin && !store.getters.getToken) {
-    if (ua.match(/MicroMessenger/i)) {
-      next({
-        path:'/wechat_confirm'
-      })
-    } else {
-      next(/*{
-        path:'/login'}*/
-        location.replace('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4b847b5fbbaaeda6&redirect_uri=https%3A%2F%2Fcoupon.talentyou.cn%2Fapi%2Fv1%2Fwechat_login&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect')
-      )
-    }
-  }
-  /* 路由发生变化修改页面title */
-  if (to.meta.title) {
-    document.title = to.meta.title
-  }
-  next()
-});
+router.beforeEach(
+);
 
 // eslint-disable-next-line no-unused-vars
 router.afterEach(transition => {
