@@ -8,6 +8,7 @@ vuex
 
 ## Project setup
 ```
+cd lab_temp
 npm install
 ```
 

@@ -26,8 +26,16 @@
     </div>
 </template>
 <script>
+    import { Page } from 'view-design'
+    import listVue from 'view-design/src/components/list/list.vue'
+    import listItemVue from 'view-design/src/components/list/list-item.vue'
     export default {
-        name:"news"
+        name:"news",
+        components:{
+            List:listVue,
+            ListItem:listItemVue,
+            Page:Page
+        }
     }
 </script>
 <style>

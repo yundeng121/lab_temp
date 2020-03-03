@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Carousel autoplay v-model="value2" dots="outside"  loop>
+        <Carousel autoplay v-model="value" dots="outside"  loop>
             <CarouselItem>
                 <div class="demo-carousel">
                     <img src="@/assets/c1.png">
@@ -15,11 +15,17 @@
     </div>
 </template>
 <script>
-    import { Carousel } from 'view-design'
+    import { Carousel,CarouselItem } from 'view-design'
     export default {
         name:"home",
+        data(){
+            return{
+                value:0
+            }
+        },
         components: {
-            Carousel
+            Carousel,
+            CarouselItem
         },
     }
 </script>

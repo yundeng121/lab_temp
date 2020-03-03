@@ -2,11 +2,11 @@
   <div id="app">
     <div class="header">
       <div class="logo" href="/">
-        <img src="@/assets/logo.jpg">
+        <img src="@/assets/logo.jpg" />
         <span>刘智实验室</span>
       </div>
     </div>
-    <router-view name="menu"></router-view>
+    <router-view name="Navigation"></router-view>
     <router-view></router-view>
     <!--<router-view name="tabbar"></router-view>-->
     <div class="footer">

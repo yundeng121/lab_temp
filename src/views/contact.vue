@@ -17,9 +17,9 @@
     </div>
 </template>
 <script>
-export default {
-    
-}
+    export default {
+        name:'contact'
+    }
 </script>
 <style scoped>
     .layout{

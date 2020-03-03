@@ -22,8 +22,18 @@
     </div>
 </template>
 <script>
+import { Layout,Sider,Menu,MenuItem,Breadcrumb,BreadcrumbItem,Content } from 'view-design'
 export default {
-    
+    name:'research',
+    components:{
+        Layout,
+        Sider,
+        Menu,
+        MenuItem,
+        Breadcrumb,
+        BreadcrumbItem,
+        Content
+    }
 }
 </script>
 <style scoped>

@@ -18,7 +18,7 @@ const router = new VueRouter({
       name: 'index',
       components: {
         default: home,
-        menu:Menu
+        Navigation:Menu
       }
     },
     {
@@ -26,42 +26,42 @@ const router = new VueRouter({
       name: 'news',
       components: {
         default: news,
-        menu:Menu
+        Navigation:Menu
       }
     },{
       path:'/research',
       name: 'research',
       components: {
         default: research,
-        menu:Menu
+        Navigation:Menu
       }
     },{
       path:'/team',
       name: 'team',
       components: {
         default: team,
-        menu:Menu
+        Navigation:Menu
       }
     },{
       path:'/results',
       name: 'results',
       components: {
         default: results,
-        menu:Menu
+        Navigation:Menu
       }
     },{
       path:'/recruit',
       name: 'recruit',
       components: {
         default: recruit,
-        menu:Menu
+        Navigation:Menu
       }
     },{
       path:'/contact',
       name: 'contact',
       components: {
         default: contact,
-        menu:Menu
+        Navigation:Menu
       }
     }
   ] 

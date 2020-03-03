@@ -1,10 +1,11 @@
 <template>
-    <div class="menu">
+    <div class="Navigation">
       <Menu v-model="active" mode="horizontal">
         <MenuItem 
-            v-for="item in tabItems"
+            v-for="(item,index) in tabItems"
             :to="item.path"
             :key="item.name"
+            :name="index"
         >{{item.name}}
         </MenuItem>
       </Menu>
@@ -13,7 +14,7 @@
 <script>
     import { Menu, MenuItem } from 'view-design'
     export default {
-        name:'menu',
+        name:'Navigation',
         data(){
             return{
                 active: 0,
@@ -73,7 +74,7 @@
     }
 </script>
 <style scoped>
-    .menu{
+    .Navigation{
         margin-bottom: 15px;
     }
 </style>
